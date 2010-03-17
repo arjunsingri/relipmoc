@@ -1,0 +1,91 @@
+.TH RELIPMOC 1 "2004-06-30"
+.SH NAME
+relipmoC \- Assembly to C translator \- For the Intel 80386 
+.SH "SYNOPSIS"
+.IX Header "SYNOPSIS"
+relipmoC [ \fB\-n\fR | \fB\--noindent\fR ]
+         [ \fB\-o\fR \fIoutfile\fR ]
+         [ \fB\-s\fR ]
+         [ \fB\--prefix\fR=\fIPREFIX\fR ]
+         [ \fB\--precision\fR=\fINUMBER\fR ]
+         [ \fB\-V\fR | \fB\--verbose\fR ]
+         [ \fB\-v\fR | \fB\--version\fR ]
+         [ \fB\-h\fR | \fB\--help\fR ]
+         \fIasmfile\fR
+.SH "DESCRIPTION"
+.IX Header "DESCRIPTION"
+The \fBrelipmoC\fR command converts the input assembly file \fIasmfile\fR and directs output to the file \fIoutfile\fR if specified. If \fIoutfile\fR is not specified, \fBrelipmoC\fR will print the generated C code to a file with filename "asmfile".c.
+
+.SH "OPTIONS"
+.IX Header "OPTIONS"
+.TP
+.IP "\fB\-h\fR" 4
+.IX Item "-a"
+.PD 0
+.IP "\fB\-help\fR" 4
+.IX Item "--help"
+.PD
+Causes \fBrelipmoC\fR to exit immediately, after giving a summary of its invocation options.
+.IP "\fB\-n\fR" 4
+.IX Item "-n"
+.PD 0
+.IP "\fB\--noindent\fR" 4
+.IX Item "--noindent"
+.PD
+Specifies not to indent the generated C code file.
+.IP "\fB\-o\fR \fIfilename\fR"
+.IX Item "-o filename"
+Specifies a name for the output file. The output file generated is a C code file.
+.IP "\fB\--prefix\fR=\fIPREFIX\fR" 4
+.IX Item "--prefix=PREFIX"
+.PD
+Prefix \fBPREFIX\fR to the names of local variables and function parameters.
+.PD
+.IP "\fB\--precision\fR=\fINUMBER\fR" 4
+.IX Item "--precision=NUMBER"
+.PD
+Use \fBNUMBER\fR as the precision for the generated floating point numbers.
+.PD
+.IP "\fB\-s\fR" 4
+.IX Item "-s"
+.PD
+Instructs relipmoC to write the generated C file to \fIstdout\fR.
+.IP "\fB\-V\fR" 4
+.IX Item "-V"
+.PD 0
+.IP "\fB\--verbose\fR" 4
+.IX Item "--verbose"
+.PD
+Causes \fBrelipmoC\fR to be verbose during the conversion process. This means \fBrelipmoC\fR will display information regarding the current stage of decompilation on \fIstdout\fR.
+.IP "\fB\-v\fR" 4
+.IX Item "-v"
+.PD 0
+.IP "\fB\--version\fR" 4
+.IX Item "--version"
+.PD
+Causes \fBrelipmoC\fR to display version information and exit immediately.
+.SH "FEATURES"
+.IX Header "FEATURES"
+\fBrelipmoC\fR cannot handle aggregate like structures, arrays, pointers and their combinations. It can handle the signed and unsigned versions of the basic data types. It cannot handle the postfix increment and decrement operators. All \fBswitch\fR statements will be transformed into a series of \fBif...else\fR statements which give the same output as the original \fBswitch\fR statement. Also \fBfor\fR loops will be converted into equivalent \fBwhile\fR loops.
+
+.SH "BUGS"
+.IX "BUGS"
+None that we know of.
+
+.SH "SUPPORTED PLATFORMS"
+.IX Header "SUPPORTED PLATFORMS"
+To port relipmoC to different platforms you have to compile it using a compiler which produces code for that platform. However, relipmoC can decompile assembly files obtained from gcc3.2.2 for Intel 80386 only.
+
+.SH "AUTHORS"
+.IX Header "AUTHORS"
+    Arjun S J <arjunsingri@yahoo.co.in>
+    Darshan D Desai <ddddd@indiatimes.com>
+
+.SH "LICENSE"
+.IX Header "LICENSE"
+    GNU GENERAL PUBLIC LICENSE Version 2, June 1991
+    See COPYING for details.
+	
+.SH "SEE ALSO"
+.IX Header "SEE ALSO"
+\fIobjdump\fR(1), \fIas\fR(1), \fIgcc\fR(1).
