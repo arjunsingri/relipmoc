@@ -2,6 +2,8 @@
 #define __RELIPMOC__ARJUN__H
 
 #include<string>
+#include<cassert>
+#include<cstring>
 #include<algorithm>
 #include<iostream>
 #include<sstream>
