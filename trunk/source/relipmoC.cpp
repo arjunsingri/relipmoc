@@ -378,8 +378,6 @@ void printHelp( void )
 "Convert the assembly language in asmfile to equivalent C code\n"
 "\n"
 "Options:\n"
-"	-n --noindent           Don't indent the generated C code\n"
-"\n"
 "	-o <file>               Place the output into <file>\n"
 "\n"
 "	-h --help               Display this information and exit\n"
