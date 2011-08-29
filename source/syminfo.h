@@ -5,6 +5,7 @@ using namespace std;
 #include<string>
 #include<map>
 #include<fstream>
+#include<cassert>
 #include"arjun.h"
 
 enum SYMTYPE { 	REG,
